@@ -19,7 +19,13 @@ def main():
     print(f"{goblin.name} enters the arena with {goblin.health} health.")
     print("But no hero has answered the call... yet.")
 
-    Dominator = Hero("Dominator")
+
+
+
+    goblin2 = Goblin("Dribble")
+    print(f"{goblin2.name} enters the arena with {goblin2.health} health.")
+
+    Dominator = Hero("Dominator") 
 
     print(f"{Dominator.name} is summoned into the arena with {Dominator.health} health.")
 
