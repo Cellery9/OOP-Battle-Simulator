@@ -1,6 +1,5 @@
 import random
 
-
 class Goblin:
     """A completed character class students can examine as an OOP example."""
 
