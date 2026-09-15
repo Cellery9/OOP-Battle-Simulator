@@ -4,6 +4,18 @@ import random
 
 ARENA_NAME = "The Iron Lung"
 
+def battle(hero: Hero, enemy: Goblin):
+    while hero.is_alive() and goblin.is_alive():
+        hero_damage = hero.attack()
+        goblin.take_damage(hero_damage)
+        if goblin.is_alive():
+            goblin_damage = enemy.attack()
+            hero.take_damage(goblin_damage)
+
+        if hero.is_alive():
+            print(f"{hero.name} wins!")
+        else:
+            print(f"{enemy.name} wins!")
 
 def main():
     """Open the arena and introduce its first opponent."""
@@ -11,36 +23,33 @@ def main():
     print("༼ ᓄºل͟º ༽ᓄ   ᕦ(ò_óˇ)ᕤ")
     print("The gates are opening...")
 
-    
 
-    goblin = Goblin("Gribble")
+    enemy = Goblin("Gribble")
 
 
-    print(f"{goblin.name} enters the arena with {goblin.health} health.")
+    print(f"{enemy.name} enters the arena with {enemy.health} health.")
     print("But no hero has answered the call... yet.")
 
+    enemy2 = Goblin("Dribble")
+    print(f"{enemy2.name} enters the arena with {enemy2.health} health.")
 
+    hero = Hero("Dominator") 
 
+    print(f"{hero.name} is summoned into the arena with {hero.health} health.")
 
-    goblin2 = Goblin("Dribble")
-    print(f"{goblin2.name} enters the arena with {goblin2.health} health.")
-
-    Dominator = Hero("Dominator") 
-
-    print(f"{Dominator.name} is summoned into the arena with {Dominator.health} health.")
-
-    heroDamage = Dominator.attack()
-    goblin.take_damage(heroDamage)
+    heroDamage = hero.attack()
+    enemy.take_damage(heroDamage)
     def take_damage(self, damage):
         #subtract damage but cant fall below 0
         self.health = max(0, self.health - damage)
-    if goblin.health > 0:
-        goblinDamage = goblin.attack()
-        if goblinDamage > 1:
-            Dominator.take_damage(goblinDamage - 2)
+    if enemy.health > 0:
+        enemyDamage = enemy.attack()
+        if enemyDamage > 1:
+            hero.take_damage(enemyDamage - 2)
         else:
-            Dominator.take_damage(goblinDamage)
+            hero.take_damage(enemyDamage)
         print("Dominator's armor lessened Gribble's attack!!")
 
 if __name__ == "__main__":
     main()
+    battle("Gribble", "Dominator")
