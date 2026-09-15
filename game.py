@@ -25,13 +25,14 @@ def main():
 
 
     enemy = Goblin("Gribble")
-
-
+    
     print(f"{enemy.name} enters the arena with {enemy.health} health.")
     print("But no hero has answered the call... yet.")
 
-    enemy2 = Goblin("Dribble")
+    enemy2 = Goblin("Scribble")
+
     print(f"{enemy2.name} enters the arena with {enemy2.health} health.")
+
 
     hero = Hero("Dominator") 
 
