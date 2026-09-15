@@ -5,12 +5,12 @@ import random
 ARENA_NAME = "The Iron Lung"
 
 def battle(hero: Hero, enemy: Goblin):
-    while hero.is_alive() and goblin.is_alive():
+    while hero.is_alive() and enemy.is_alive():
         hero_damage = hero.attack()
-        goblin.take_damage(hero_damage)
-        if goblin.is_alive():
-            goblin_damage = enemy.attack()
-            hero.take_damage(goblin_damage)
+        enemy.take_damage(hero_damage)
+        if enemy.is_alive():
+            enemy_damage = enemy.attack()
+            enemy.take_damage(goblin_damage)
 
         if hero.is_alive():
             print(f"{hero.name} wins!")
@@ -31,7 +31,7 @@ def main():
 
     enemy2 = Goblin("Scribble")
 
-    print(f"{enemy2.name} enters the arena with {enemy2.health} health.")
+    print(f"{enemy2.name} enters the arena alongside {enemy.name} with {enemy2.health} health.")
 
 
     hero = Hero("Dominator") 
@@ -51,6 +51,7 @@ def main():
             hero.take_damage(enemyDamage)
         print("Dominator's armor lessened Gribble's attack!!")
 
+
 if __name__ == "__main__":
     main()
-    battle("Gribble", "Dominator")
+    battle("Dominator", "Gribble")
