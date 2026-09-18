@@ -15,7 +15,7 @@ class Hero:
     def take_damage(self, damage):
         #subtract damage but cant fall below 0
         self.health = max(0, self.health - damage)
-        print(f"{self.name} takes {damage} damage. Health {self.health}")
+        print(f"{self.name} takes {damage} damage. Health: {self.health}")
 
     def is_alive(self):
         #if goblin has health remaining print True

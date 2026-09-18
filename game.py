@@ -10,12 +10,13 @@ def battle(hero: Hero, enemy: Goblin):
         enemy.take_damage(hero_damage)
         if enemy.is_alive():
             enemy_damage = enemy.attack()
-            enemy.take_damage(goblin_damage)
+            hero.take_damage(enemy_damage)
 
-        if hero.is_alive():
-            print(f"{hero.name} wins!")
-        else:
-            print(f"{enemy.name} wins!")
+
+    if hero.is_alive():
+        print(f"{hero.name} wins!")
+    else:
+        print(f"{enemy.name} wins!")
 
 def main():
     """Open the arena and introduce its first opponent."""
@@ -37,21 +38,8 @@ def main():
     hero = Hero("Dominator") 
 
     print(f"{hero.name} is summoned into the arena with {hero.health} health.")
-
-    heroDamage = hero.attack()
-    enemy.take_damage(heroDamage)
-    def take_damage(self, damage):
-        #subtract damage but cant fall below 0
-        self.health = max(0, self.health - damage)
-    if enemy.health > 0:
-        enemyDamage = enemy.attack()
-        if enemyDamage > 1:
-            hero.take_damage(enemyDamage - 2)
-        else:
-            hero.take_damage(enemyDamage)
-        print("Dominator's armor lessened Gribble's attack!!")
+    battle(hero, enemy)
 
 
 if __name__ == "__main__":
     main()
-    battle("Dominator", "Gribble")
