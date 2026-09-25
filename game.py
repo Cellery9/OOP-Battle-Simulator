@@ -1,5 +1,6 @@
 from goblin import Goblin
 from hero import Hero
+from boss import Boss
 import random
 
 ARENA_NAME = "The Iron Lung"
@@ -40,6 +41,8 @@ def main():
     print(f"{hero.name} is summoned into the arena with {hero.health} health.")
     battle(hero, enemy)
 
+    bossGuy = Boss("Bob")
+    battle(hero, bossGuy)
 
 if __name__ == "__main__":
     main()
