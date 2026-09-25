@@ -25,4 +25,4 @@ class Boss(Enemy):
         super().take_damage(damage)
 
     def introduce(self):
-        print(f"{self.name} JOINS THE FIGHT WITH {self.health} health!!!")
+        print(f"{self.name} JOINS THE FIGHT WITH {self.health} HEALTH!!!")
