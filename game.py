@@ -41,7 +41,7 @@ def main():
     print(f"{hero.name} is summoned into the arena with {hero.health} health.")
     battle(hero, enemy)
 
-    bossGuy = Boss("Maximus")
+    bossGuy = Boss("Bob")
     battle(hero, bossGuy)
 
 if __name__ == "__main__":
